@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <!-- türkçe karakter için  -->
+    <meta charset="UTF-8">
+    <!-- cep telefonunda da düzgün çıkması için ayar viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tarayıcıda sekmede yazacak yazı  -->
+    <title>Rüveyda - Yazılım Mühendisliği Öğrencisi</title>
+    <!-- google da aratılırken çıkan metin  -->
+    <meta name="description" content="Rüveyda'nın Kişisel Portfolyosu ve Sertifikaları">
+
+    <!-- Google Fonts link ile çağırıyorum -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Dosyamız, rel tarayıcıya neyi eklediğimizi söyleriz burada tasarım şablonu olan style.css dosyasını bağlıyoruz -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Arka Plan Partikülleri -->
+    <div id="particles-container"></div>
+
+    <!-- Kayan Menü (Sticky Header) -->
+    <header class="glass-header">
+        <nav>
+            <div class="logo">Rüveyda Kakşı</div>
+            <ul class="nav-links">
+                <!--(<a> link etiketi ile) tıklandığında sayfanın ilgili bölümüne asansör gibi inmeni sağlar-->
+                <li><a href="#hero" data-i18n="nav-home">Ana Sayfa</a></li>
+                <li><a href="#about" data-i18n="nav-about">Hakkımda</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">Projelerim</a></li>
+                <li><a href="#certificates" data-i18n="nav-certs">Sertifikalar</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">İletişim</a></li>
+            </ul>
+            <div class="lang-switcher">
+                <button class="lang-btn active-lang" data-lang="tr">TR</button>
+                <span class="lang-sep">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Kahraman Alanı (Hero Section) veya karşılama alanı -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="serif-title"><span id="typewriter-text"></span><span class="cursor"></span></h1>
+            <!-- bilerek boş çünkü daktilo efekti yaptık-->
+            <p class="subtitle" data-i18n="hero-subtitle">Yazılım Mühendisliği Öğrencisi & Geleceğin Geliştiricisi</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="primary-btn" data-i18n="btn-projects">Projelerimi Gör</a>
+                <a href="#certificates" class="secondary-btn" data-i18n="btn-certs">Sertifikalarımı Gör</a>
+            </div>
+        </div>
+        <!-- Profil Fotoğrafı -->
+        <div class="hero-image-placeholder">
+            <div class="photo-frame">
+                <div class="decorative-border top">────────────────────</div>
+                <img src="assets/profile.png" alt="Rüveyda Profil Fotoğrafı" class="profile-img">
+                <div class="decorative-border bottom">────────────────────</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımda (About Section) -->
+    <section id="about" class="about-section">
+        <div class="about-card glass-panel">
+            <h2 class="serif-title" data-i18n="about-title">Hakkımda</h2>
+            <p data-i18n="about-p1">
+                Merhaba, ben Rüveyda. Yazılım Mühendisliği öğrencisiyim ve özellikle backend geliştirme, veritabanı
+                sistemleri ve gerçek dünya problemlerine çözüm üreten projeler üzerinde çalışıyorum.
+            </p>
+            <p data-i18n="about-p2">
+                Kod yazmayı sadece teknik bir süreç değil, aynı zamanda problem çözme sanatı olarak görüyorum. Sürekli
+                öğrenmeye, üretmeye ve kendimi geliştirmeye önem veriyorum.
+            </p>
+            <p data-i18n="about-p3">
+                Yazılım dünyasına olan bu tutkumla şu anda temel algoritmalar, veri yapıları ve web teknolojileri
+                üzerine yoğunlaşıyorum. Öğrenme sürecimi bu portfolyoda belgeliyor ve deneyimlerimi paylaşıyorum.
+            </p>
+            <div class="skills">
+                <span class="skill-tag">C# / .NET</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">SQL</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projelerim (Projects Section) -->
+    <section id="projects" class="projects-section">
+        <h2 class="serif-title center-text" data-i18n="projects-title">Projelerim</h2>
+        <p class="center-text" data-i18n="projects-subtitle">Geliştirdiğim ve üzerinde çalıştığım bazı projeler.</p>
+
+        <div id="github-projects-container" class="projects-grid">
+            <!-- Projeler JavaScript ile buraya yüklenecek -->
+            <div class="loader-container">
+                <div class="loader"></div>
+                <p data-i18n="loading-projects">GitHub'dan projeler yükleniyor...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikalar ve İnteraktif Mockup (Certificates Section) -->
+    <section id="certificates" class="certificates-section">
+        <h2 class="serif-title center-text" data-i18n="certs-title">Eğitimler ve Sertifikalar</h2>
+        <p class="center-text" data-i18n="certs-subtitle">Tamamladığım kurslar ve aldığım belgeler.</p>
+
+        <div class="mockup-container">
+            <!-- Sol taraftaki Sertifika Listesi -->
+            <div class="certificate-list">
+                <button class="cert-btn active" data-img="assets/cert-c.png">C Programlama
+                    Dili</button>
+                <button class="cert-btn" data-img="assets/cert-ccna.png">CCNA Ağlara
+                    Giriş</button>
+                <button class="cert-btn" data-img="assets/cert-linux.png">Linux
+                    Unhatched</button>
+                <button class="cert-btn" data-img="assets/cert-savunma.png">Savunma Sanayi</button>
+                <button class="cert-btn" data-img="assets/cert-python.png">Python Eğitimi</button>
+                <button class="cert-btn" data-img="assets/cert-git.png">Git ve GitHub</button>
+            </div>
+            <!-- Sağ taraftaki Cam Çerçeve (Glass Frame) -->
+            <div class="cert-display-frame">
+                <div class="cert-image-container">
+                    <img id="mockup-image" src="assets/cert-c.png"
+                        alt="Sertifika Görseli">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim (Contact Section) -->
+    <section id="contact" class="contact-section">
+        <h2 class="serif-title" data-i18n="contact-title">Bana Ulaşın</h2>
+
+        <div class="contact-container glass-panel">
+            <form action="https://formspree.io/f/mvzdqzpb" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name" data-i18n="label-name">Adınız Soyadınız</label>
+                    <input type="text" id="name" name="name" required placeholder="Örn: Ahmet Yılmaz"
+                        data-i18n-placeholder="placeholder-name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email" data-i18n="label-email">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required placeholder="Örn: ornek@email.com"
+                        data-i18n-placeholder="placeholder-email">
+                </div>
+
+                <div class="form-group">
+                    <label for="message" data-i18n="label-message">Mesajınız</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Bana ne söylemek istersiniz?"
+                        data-i18n-placeholder="placeholder-message"></textarea>
+                </div>
+
+                <button type="submit" class="primary-btn submit-btn" data-i18n="btn-submit">Mesajı Gönder</button>
+            </form>
+
+            <div class="contact-social">
+                <p data-i18n="contact-other">Veya diğer platformlardan ulaşın:</p>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/r%C3%BCveyda-kak%C5%9F%C4%B1-b69a2b335/" target="_blank"
+                        rel="noopener noreferrer" class="contact-btn" data-i18n="btn-linkedin">LinkedIn Profilim</a>
+                    <a href="https://github.com/Rkaksi" target="_blank" rel="noopener noreferrer" class="contact-btn"
+                        data-i18n="btn-github">GitHub Sayfam</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p data-i18n="footer-text">&copy; 2026 Rüveyda. Tüm hakları saklıdır.</p>
+    </footer>
+
+
+    <!-- JavaScript Dosyalarımız -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
